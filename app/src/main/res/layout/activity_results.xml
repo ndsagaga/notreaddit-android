@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultsActivity"
+    android:clipToPadding="false"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/results_search_layout"
+        android:background="@drawable/rounded_bg"
+        android:padding="5dp"
+        android:elevation="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/results_search_text"
+            android:layout_weight="1"
+            android:inputType="text"
+            android:hint="Search..."/>
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/results_search_btn"
+            android:padding="10dp"
+            android:layout_weight="0"
+            android:src="@drawable/ic_search_white"
+            android:background="@drawable/rounded_primary_bg"
+            android:textColor="#FFF"/>
+
+
+        <ProgressBar
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:id="@+id/results_progress"
+            android:padding="10dp"
+            android:layout_weight="0"
+            android:visibility="gone"
+            android:background="@drawable/rounded_primary_bg"
+            android:textColor="#FFF"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/radar"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        app:layout_constraintTop_toBottomOf="@id/results_search_layout"
+        app:layout_constraintBottom_toTopOf="@id/results_articles_layout"/>
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginBottom="-25dp"
+        android:clipToPadding="false"
+        android:background="#00FFFFFF"
+        android:id="@+id/results_articles_layout">
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
